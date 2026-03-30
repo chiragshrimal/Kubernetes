@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicaset
+  # these are the label of the replicaset 
+  labels:
+    app: nginx
+spec:
+  replicas: 5
+  # selector label ke base pe identify krta hai ki how many pod are running 
+  selector:
+    matchLabels:
+      app: nginx
+      # using template we define each pod configuration 
+  template:
+    metadata:
+    # this is the label of the each pod created by this replicaset
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
