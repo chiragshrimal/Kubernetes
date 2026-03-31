@@ -9,6 +9,7 @@ const pool = new pg.Pool({
   connectionString: "postgres://postgres:postgres@db.default.svc.cluster.local:5432/postgres",
 });
 
+
 app.get("/users", async (req, res) => {
   const result = await pool.query("SELECT * FROM users");
   res.json(result.rows);
