@@ -14,7 +14,7 @@ spec:
   ingressClassName: nginx
   # mapping rules
   rules:
-  - host: 100xdevs.com
+  - host: chirag.com
     http:
       paths:
       - path: /backend
