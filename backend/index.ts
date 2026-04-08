@@ -1,3 +1,7 @@
+require("dotenv").config({
+    path: "./secret/.env"
+})
+
 console.log("Hello via Bun!");
 
 import express from "express"
